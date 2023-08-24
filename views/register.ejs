@@ -1,0 +1,31 @@
+<!-- views/register.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://images.pexels.com/photos/4497591/pexels-photo-4497591.jpeg?auto=compress&cs=tinysrgb&w=800">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <section>
+        <h1>Register</h1>
+
+        <form action="/register" method="post">
+            <label for="username">Username: </label>
+            <input type="text" name="username" required>
+            <label for="password">Password: </label>
+            <input type="password" name="password" required>
+            <div class="btn">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+        <p>Go back <a href="/login">Login</a></p>
+    </section>
+</body>
+
+</html>

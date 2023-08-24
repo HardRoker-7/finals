@@ -1,0 +1,39 @@
+<!-- views/login.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://images.pexels.com/photos/4497591/pexels-photo-4497591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <img src="/assets/D.A.T (7).png" alt="logo">
+
+    </header>
+
+    <section>
+
+        <h1>Login</h1>
+
+        <form action="/login" method="post">
+            <div>
+                <label for="username">Username: </label>
+                <input type="text" name="username" required>
+                <label for="password">Password: </label>
+                <input type="password" name="password" required>
+                <div class="btn">
+                    <button type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="/register">Register</a></p>
+    </section>
+</body>
+
+</html>

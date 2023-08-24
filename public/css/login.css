@@ -1,0 +1,121 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: fle;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+
+    margin-bottom: 20px;
+    /* Add background color and transparency */
+}
+
+
+
+img {
+    width: 20vw;
+    height: 13vh;
+    border-radius: 10px;
+}
+
+section {
+    width: 80%;
+    max-width: 400px;
+    /* Adjust the max-width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid white;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+}
+
+input:focus {
+    background-color: white;
+    color: black;
+}
+
+button {
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    border: 3px solid white;
+    padding: 5px 15px;
+    width: inherit;
+
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+
+}
+
+.btn {
+    text-align: center;
+}
+
+img:hover,
+section:hover,
+button:hover {
+    border-radius: 20px;
+    box-shadow: 1px 1px 9px yellow;
+    transition: 600ms;
+    cursor: pointer;
+    border-color: white;
+}
+
+a:visited {
+    color: white
+}
+
+a:hover,
+a:active {
+    color: yellow;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+    }
+}

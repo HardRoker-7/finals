@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Digital Asset Tracker</title>
+    <link rel="icon"
+        href="https://images.pexels.com/photos/4497591/pexels-photo-4497591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+    <!-- Include chart library (e.g., Chart.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+            <ul>
+
+                <li><img src="/assets/logo.png" alt="Logo"></li>
+
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/news">Stock News</a></li>
+                <li> <a href="/api">Stock Fundamentals</a></li>
+                <li> <a href="/sitemap">Sitemap</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <h1>Stock Dashboard</h1>
+
+
+        <section class="one">
+
+            <div class="content-section">
+                <h2>Add Stock</h2>
+                <div class="ch">
+                    <canvas id="pieChartCanvas"></canvas>
+                </div>
+                <div class="container2">
+
+                    <form action="/addStock" method="post">
+                        <label for="symbol" class="add-stock-form">Symbol:</label>
+                        <input type="text" id="symbol" name="symbol" required>
+
+                        <label for="qty" class="space-top">Quantity:</label>
+                        <input type="number" id="qty" name="qty" required>
+
+                        <button type="submit" class="space-top" id="btn">Add Stock</button>
+                    </form>
+                    <div class="question-mark">&#9432;</div>
+                    <div class="explanation">
+                        <p>This is where you can enter the stock symbol and quantity. The stock symbol represents the
+                            unique code for a particular stock, and the quantity is the number of shares you want to
+                            add. Once you have clicked on the add button the stock and its price will be displayed on
+                            the dashboard below. </p>
+                    </div>
+                </div>
+        </section>
+        <section class="two">
+
+            <div class="table-section">
+                <h2>My Stocks</h2>
+                <table>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Quantity</th>
+                        <th>Stock Value</th>
+                        <th>Delete</th> <!-- New column for delete button -->
+
+                    </tr>
+                    <% let totalPortfolioValue=0; %>
+                        <% stocks.forEach(stock=> { %>
+                            <tr>
+                                <td>
+                                    <%= stock.symbol.toUpperCase() %>
+                                </td>
+                                <td>
+                                    <%= stock.qty %>
+                                </td>
+                                <td>
+                                    <%= (stock.qty * stock.symbolValue).toFixed(2) %>
+                                </td>
+                                <td>
+                                    <form action="/deleteStock" method="post">
+                                        <input type="hidden" name="id" value="<%= stock._id %>">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+
+
+                            </tr>
+                            <% totalPortfolioValue +=stock.qty * stock.symbolValue; %>
+                                <% }); %>
+                                    <h3>Total Portfolio Value: &#36; <%= totalPortfolioValue.toFixed(2) %>
+                                    </h3>
+                </table>
+
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="/api">1</a>
+            <a href="/news">2</a>
+            <a href="/asian">3</a>
+            <a href="/sitemap">4</a>
+            <a href="#">&raquo;</a>
+
+        </div>
+    </footer>
+
+    <script>
+
+
+        async function updatePieChart() {
+            const rows = document.querySelectorAll('table tr:not(:first-child)'); // Select all rows except the header
+            const labels = [];
+            const data = [];
+
+            rows.forEach(row => {
+                const symbol = row.cells[0].textContent; // Symbol is in the first cell
+                const qty = parseFloat(row.cells[1].textContent); // Quantity is in the second cell
+
+                labels.push(symbol);
+                data.push(qty);
+            });
+
+            const ctx = document.getElementById('pieChartCanvas').getContext('2d');
+            const pieChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)',
+                        ],
+                    }],
+                },
+            });
+        }
+
+        // Call the function to generate the initial pie chart when the page loads
+
+        updatePieChart();
+        function showAddedStockPrompt() {
+            alert(`${symbol.value.toUpperCase()} stock was added to your dashboard!`);
+        }
+
+        // Attach the function to the form submission
+        const addStockForm = document.querySelector('form[action="/addStock"]');
+        if (addStockForm) {
+            addStockForm.addEventListener('submit', showAddedStockPrompt);
+        }
+
+    </script>
+
+
+</body>
+
+</html>

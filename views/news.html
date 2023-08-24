@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://images.pexels.com/photos/4497591/pexels-photo-4497591.jpeg?auto=compress&cs=tinysrgb&w=800">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/news.css">
+
+
+    <title>Stock Dashboard</title>
+
+</head>
+
+<body onload=" getStockMarketNews()">
+    <header>
+
+        <nav>
+            <ul>
+                <li><img src="/assets/logo.png" alt="Logo" class="one"></li>
+                <li><a href="/logout">Logout</a></li>
+
+                <li><a href="/index">Home</a></li>
+                <li> <a href="/api">Stock Fundamentals</a></li>
+                <li> <a href="/sitemap">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="news">
+            <h1>Latest Stock News</h1>
+
+            <div id="news-container"></div>
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="/index">1</a>
+            <a href="/api">2</a>
+            <a href="/asian">3</a>
+            <a href="/sitemap">4</a>
+            <a href="#">&raquo;</a>
+
+        </div>
+    </footer>
+    <script src="/js/news.js"></script>
+</body>
+
+</html>

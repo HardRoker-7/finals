@@ -1,0 +1,222 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+
+body {
+
+    width: 100vw;
+    min-height: 100%;
+    position: relative;
+
+    padding-bottom: 9rem;
+    box-sizing: inherit;
+    background-color: #13113C;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+a {
+    color: #337ab7;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+    color: yellow;
+    transition: 600ms;
+}
+
+header {
+    width: 90vw;
+    border: 2px solid white;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 5px 10px;
+}
+
+main {
+    min-height: calc(100vh - 150px);
+    width: 90vw;
+}
+
+.dashboard {
+    width: 90vw;
+    height: 30vh;
+    border: 3px solid white;
+}
+
+main {
+    width: 50vw;
+}
+
+.stocks,
+.newsContainer {
+    width: 100%;
+    border: 3px solid white;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.stocks {
+    height: 50vh;
+    margin: 10px 0;
+}
+
+.newsContainer {
+    height: 50vh;
+    margin: 10px 0;
+}
+
+.news-item {
+    background-color: #1E1E40;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.one {
+    width: 9vw;
+    height: 5vh;
+    border-radius: 10px;
+}
+
+.one:hover {
+    border-radius: 20px;
+    box-shadow: 1px 1px 9px yellow;
+    transition: 600ms;
+    cursor: pointer;
+    border-color: white;
+}
+
+img {
+    width: 450px;
+    height: 250px;
+
+}
+
+p {
+    margin: 6px 0 4px 0;
+}
+
+
+
+
+footer {
+    text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.pagination a {
+    color: #337ab7;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 567px) {
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        font-size: 17px;
+
+    }
+
+    main {
+        min-height: calc(100vh - 200px);
+    }
+
+    img {
+        width: 150px;
+        height: 90px;
+
+    }
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        font-size: 20px;
+    }
+}
+
+/* Additional media queries for larger screens (adjust as needed) */
+@media (min-width: 1024px) {
+    header {
+        font-size: 24px;
+    }
+
+    main {
+        min-height: calc(100vh - 250px);
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
+
+    .dashboard {
+        height: 40vh;
+    }
+
+    .stocks {
+        height: 60vh;
+        margin: 10px;
+    }
+}

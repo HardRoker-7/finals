@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Company Financials Bar Graph</title>
+  <link rel="icon"
+    href="https://images.pexels.com/photos/4497591/pexels-photo-4497591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Include Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+
+    <nav>
+      <ul>
+
+        <li><img src="/assets/logo.png" alt="Logo"></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/index">Home</a></li>
+        <li> <a href="/news">Stocks News</a></li>
+        <li> <a href="/sitemap">Sitemap</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="searchBar">
+
+    <label for="companySymbol">Enter Company Symbol:</label>
+    <input type="text" id="companySymbol" />
+
+    <button onclick="fetchAndPlotData()">Plot</button>
+    <button onclick="fetchData()">Income</button>
+    <button onclick="getFinancialData()">Show Common Stock</button>
+    <div class="tooltip"> &#9432;
+      <p class="tooltip-text">The Plot button shows the stock chart of the symbol that you added.
+        The Income button will show the net income and revenue of the symbol. The Show common stock button will show the
+        cash on hand the company has, its debt and the total common shares available.
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="chart1">
+        <h2 id="priceChart"></h2>
+        <canvas id="stockChart"></canvas>
+      </div><button onclick="clearInput()">Clear Input</button>
+
+    </div>
+
+    <div class="chartContainer">
+
+
+      <h2 id="companySymbolDisplay1"></h2>
+      <canvas id="stockChart1"></canvas>
+    </div>
+
+    <div class="chart">
+      <h2 id="companySymbolDisplay"></h2>
+      <canvas id="financialChart"></canvas>
+    </div> <button onclick="clearInput1()">Clear Input</button>
+  </div>
+
+  <script src="/js/income.js"></script>
+
+  </div>
+  <footer>
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="/index">1</a>
+      <a href="/news">2</a>
+      <a href="/asian">3</a>
+      <a href="/sitemap">4</a>
+
+      <a href="#">&raquo;</a>
+
+    </div>
+  </footer>
+</body>
+
+</html>

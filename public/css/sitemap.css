@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #13113C;
+    color: white;
+}
+
+header {
+    width: 90vw;
+
+    border: 2px solid white;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+li {
+    padding: 5px 10px;
+}
+
+img {
+    width: 9vw;
+    height: 5vh;
+    border-radius: 10px;
+}
+
+img:hover {
+    border-radius: 20px;
+    box-shadow: 1px 1px 9px yellow;
+    transition: 600ms;
+    cursor: pointer;
+    border-color: white;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.sitemap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #13113C;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.section {
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.page {
+    font-size: 16px;
+    border: 2px solid white;
+
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+
+.sitemap:hover,
+.page:hover {
+    border-color: aliceblue;
+    border-radius: 13px;
+    transition: 500ms;
+    box-shadow: 1px 1px 5px yellow;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #337ab7;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+    color: yellow;
+    transition: 600ms;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pagination a {
+    color: #337ab7;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+
+    /* Adjust navigation menu for smaller screens */
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjust chart containers for smaller screens */
+
+}
+
+
+/* Media queries for different screen sizes */
+@media (max-width: 567px) {
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        font-size: 17px;
+
+    }
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        font-size: 18px;
+    }
+}
+
+/* Additional media queries for larger screens (adjust as needed) */
+@media (min-width: 1024px) {
+    header {
+        font-size: 20px;
+    }
+
+
+}
